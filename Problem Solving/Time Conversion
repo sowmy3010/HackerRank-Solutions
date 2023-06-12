@@ -1,0 +1,38 @@
+#JAVA 
+public class Solution {
+    public static void main(String[] args) 
+     {
+        Scanner in=new Scanner(System.in);
+        String st,str="";
+        st=in.next();
+        String hour;
+        int l=st.length();
+        String time=st.substring(0,l-2);
+        String ampm=st.substring(l-2,l);
+        if(ampm.equals("AM"))
+        {
+            hour=time.substring(0,2);
+            if(hour.equals("12"))
+            {
+               str="00"+time.substring(2,l-2); 
+            }
+            else 
+            str=time;
+        }
+        else
+        {
+            hour=time.substring(0,2);
+            if(hour.equals("12"))
+            {
+                str=time;
+            }
+            else{
+                int t=Integer.parseInt(hour);
+                t+=12;
+                String p=Integer.toString(t);
+                str=p+time.substring(2,l-2);
+            }
+        }
+        System.out.println(str);
+    }
+}
