@@ -1,0 +1,7 @@
+SELECT earnings, COUNT(*) AS count_employees
+FROM (
+    SELECT months * salary AS earnings
+    FROM Employee
+) 
+GROUP BY earnings
+HAVING earnings = (SELECT MAX(months * salary) FROM Employee);
