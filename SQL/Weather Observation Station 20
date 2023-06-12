@@ -1,0 +1,8 @@
+SELECT ROUND(median_value, 4) 
+FROM (
+    SELECT LAT_N,
+           ROW_NUMBER() OVER (ORDER BY LAT_N),
+           COUNT(*) OVER () AS total_count
+    FROM STATION
+) 
+WHERE row_num IN ((total_count + 1) / 2, (total_count + 2) / 2);
