@@ -1,0 +1,24 @@
+void plusMinus(vector<int> arr) {
+                int n = arr.size();
+    int positiveCount = 0;
+    int negativeCount = 0;
+    int zeroCount = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > 0)
+            positiveCount++;
+        else if (arr[i] < 0)
+            negativeCount++;
+        else
+            zeroCount++;
+    }
+    double positiveRatio = static_cast<double>(positiveCount) / n;
+    double negativeRatio = static_cast<double>(negativeCount) / n;
+    double zeroRatio = static_cast<double>(zeroCount) / n;
+
+    std::cout << std::fixed << std::setprecision(6);
+    std::cout << positiveRatio << std::endl;
+    std::cout << negativeRatio << std::endl;
+    std::cout << zeroRatio << std::endl;
+}
+
