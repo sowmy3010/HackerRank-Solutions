@@ -1,0 +1,8 @@
+def simpleArraySum(ar):
+    sum = 0
+    
+# Iterate over the array and accumulate the sum
+    for num in ar:
+        sum += num
+#return sum
+    return sum
